@@ -45,6 +45,7 @@ class Dev(Configuration):
 
   INSTALLED_APPS = [
       'blog',
+      'debug_toolbar',
       'django.contrib.admin',
       'django.contrib.auth',
       'django.contrib.contenttypes',
@@ -59,6 +60,7 @@ class Dev(Configuration):
   CRISPY_TEMPLATE_PACK = "bootstrap5"
 
   MIDDLEWARE = [
+      'debug_toolbar.middleware.DebugToolbarMiddleware',
       'django.middleware.security.SecurityMiddleware',
       'django.contrib.sessions.middleware.SessionMiddleware',
       'django.middleware.common.CommonMiddleware',
@@ -67,6 +69,8 @@ class Dev(Configuration):
       'django.contrib.messages.middleware.MessageMiddleware',
       # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
   ]
+  # obtain from get_ip view Function  
+  INTERNAL_IPS = ["192.168.10.93"]
 
   ROOT_URLCONF = 'blango.urls'
 
