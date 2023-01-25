@@ -44,6 +44,7 @@ class Dev(Configuration):
   # Application definition
 
   INSTALLED_APPS = [
+      'blango_auth',
       'blog',
       'debug_toolbar',
       'django.contrib.admin',
@@ -128,6 +129,8 @@ class Dev(Configuration):
           'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
       },
   ]
+
+  AUTH_USER_MODEL = "blango_auth.User"
 
   PASSWORD_HASHERS = [
     'django.contrib.auth.hashers.Argon2PasswordHasher',
