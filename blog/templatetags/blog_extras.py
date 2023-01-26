@@ -41,8 +41,12 @@ def endrow():
     return format_html("</div>")
 
 @register.simple_tag
-def col():
-    return format_html('<div class="col">')
+def col(item=None):
+    if item == None:
+        return format_html('<div class="col">')
+    else:
+        cont = f'<div class="col {item}">'
+        return format_html(cont)
 
 @register.simple_tag
 def endcol():
